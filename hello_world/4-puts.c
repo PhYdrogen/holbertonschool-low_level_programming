@@ -1,6 +1,8 @@
 #include <stdio.h>
-/* ma fonction main va executer mon code
- * puts prends en parametre des conts char*
+
+/**
+ * main - puts pour remplacer printf
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
