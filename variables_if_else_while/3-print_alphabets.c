@@ -27,7 +27,7 @@ int main(void)
 		if (alpha == 91)
 		{
 			alpha = 36;
-			putchar(alpha);
+			putchar('\n');
 		}
 	}
 	return (0);
