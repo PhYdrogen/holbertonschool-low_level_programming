@@ -5,9 +5,11 @@
  */
 void print_alphabet_x10(void)
 {
-	for (int tenloop = 0 ; 0 < 10 ; tenloop++)
+	int tenloop;
+	int i;
+	for (tenloop = 0 ; 0 < 10 ; tenloop++)
 	{
-		for (int i = 97 ; i <= 122 ; i++)
+		for (i = 97 ; i <= 122 ; i++)
 		{
 			_putchar(i);
 		}
