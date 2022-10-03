@@ -1,10 +1,9 @@
-#include <stdlib.h>
+nclude <stdlib.h>
 #include <stdio.h>
 /**
- * main - entry point
- * Return: 0 no error
- *
- */
+  * main - entry point
+  * Return: 0 no error
+  */
 int main(void)
 {
 	int alpha = 97;
@@ -13,13 +12,13 @@ int main(void)
 	{
 		if (101 == alpha || 113 == alpha)
 		{
-			alpha++;
-			continue;
+		alpha++;
+		continue;
 		}
 		else
 		{
-			putchar(alpha);
-			alpha++;
+		putchar(alpha);
+		alpha++;
 		}
 	}
 	putchar('\n');
