@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-	int nombre = 0;
+	int nombre = 48;
 
-	while (nombre <= 9)
+	while (nombre <= 57)
 	{
 		putchar(nombre);
 		putchar(',');
