@@ -17,7 +17,7 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 			nombre++;
-		}else
+		} else
 			break;
 	}
 	putchar('\n');
