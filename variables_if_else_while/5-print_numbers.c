@@ -9,7 +9,7 @@ int main(void)
 {
 	int nombre = 0;
 
-	while(nombre <=9)
+	while (nombre <= 9)
 	{
 	printf("%d", nombre);
 	nombre++;
