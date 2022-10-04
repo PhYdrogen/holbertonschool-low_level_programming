@@ -2,6 +2,7 @@
 /**
  * _islower - check if the char is lower
  * Return: 1 if the char is lower, 0 if not
+ * @c: the letter convert in int
  */
 int _islower(int c)
 {
