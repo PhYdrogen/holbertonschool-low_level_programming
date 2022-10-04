@@ -7,19 +7,23 @@
 int print_last_digit(int val)
 {
 	int x;
+	int y;
+
+	x = 48 + (val % 10);
+	y = 48 + (val % -10);
+
 	if (val > 0)
 	{
-		x = val % 10;
 		_putchar(x);
 		return (x);
 	} else if (val == 0)
 	{
 		_putchar('0');
 		return (0);
-	} else
+	}
+	else
 	{
-		x = val % -10;
-		_putchar(x);
-		return (x);
+		_putchar(y);
+		return (y);
 	}
 }
