@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_sing - it tells if the number is either positive or negative
+ * print_sign - it tells if the number is either positive or negative
  * @n: the number to test
  * Return: 1 if positive, 0 if equal to 0, -1 if negative
  */
-int print_sing(int n)
+int print_sign(int n)
 {
 	if (n > 0)
 	{
