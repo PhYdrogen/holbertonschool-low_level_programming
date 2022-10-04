@@ -21,4 +21,5 @@ int print_last_digit(int val)
 		x = val % -10;
 		_putchar(x);
 		return (x);
+	}
 }
