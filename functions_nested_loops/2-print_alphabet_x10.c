@@ -5,9 +5,9 @@
  */
 void print_alphabet_x10(void)
 {
-	int tenloop;
+	int x;
 	int i;
-	for (tenloop = 0 ; 0 < 10 ; tenloop++)
+	for (x = 0 ; x < 10 ; x++)
 	{
 		for (i = 97 ; i <= 122 ; i++)
 		{
