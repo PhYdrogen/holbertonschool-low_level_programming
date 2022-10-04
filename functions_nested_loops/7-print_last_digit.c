@@ -6,12 +6,19 @@
  */
 int print_last_digit(int val)
 {
+	int x;
 	if (val > 0)
 	{
-		return (val % 10);
+		x = val % 10;
+		_putchar(x);
+		return (x);
 	} else if (val == 0)
 	{
+		_putchar('0');
 		return (0);
 	} else
-		return (val % -10);
+	{
+		x = val % -10;
+		_putchar(x);
+		return (x);
 }
