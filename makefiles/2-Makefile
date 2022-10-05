@@ -6,8 +6,6 @@ all: $(NAME)
 
 school: $(SRC)
 	$(CC) $^ -o $@
-school: $(SRC)
-	$(CC) -o $@ -c $<
-main: $(SRC)
+%.o: %.c
 	$(CC) -o $@ -c $<
 
