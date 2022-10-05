@@ -25,8 +25,11 @@ void times_table(void)
 				ch2 = ch2 + '0';
 			}
 			ch = ch + '0';
-			_putchar(ch3);
-			_putchar(ch2);
+			if (k != 0)
+			{
+				_putchar(ch3);
+				_putchar(ch2);
+			}
 			_putchar(ch);
 			if (k != 9)
 				_putchar(',');
