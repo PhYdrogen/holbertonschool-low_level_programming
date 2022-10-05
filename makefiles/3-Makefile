@@ -6,11 +6,11 @@ RM=rm
 
 all: $(NAME)
 
-school:$(OBJ)
+school: $(OBJ)
 	$(CC) $^ -o $@
 
-%.o:%.c
-	$(CC) -c -o $<
+%.o: %.c
+	$(CC) -c $@ -o $<
 
 clean:
 	$(RM) -f *~ $(NAME)
