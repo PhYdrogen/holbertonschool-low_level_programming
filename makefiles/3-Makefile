@@ -19,7 +19,9 @@ oclean:
 	$(RM) -f $(wildcard *.o)
 
 fclean:
-	clean oclean
+	$(RM) -f *~ $(NAME)
+	$(RM) -f $(wildcard *.o)
 
-re:
-	oclean all
+re: $(OBJ)
+	$(RM) -f $(wildcard *.o)
+	$(CC) $^ -o $@
