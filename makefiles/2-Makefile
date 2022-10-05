@@ -2,12 +2,12 @@ CC=gcc
 SRC=main.c school.c 
 OBJ=main.o school.o
 NAME=school
-all: school
+all: $(NAME)
 
 school : $(SRC)
 	$(CC) $^ -o $@
-school.o: school.c
+school.o: $(SRC)
 	$(CC) -o $@ -c $<
-main.o: main.c
+main.o: $(SRC)
 	$(CC) -o $@ -c $<
 
