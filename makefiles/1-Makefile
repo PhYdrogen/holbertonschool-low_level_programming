@@ -2,5 +2,5 @@ CC := gcc
 SRC := main.c school.c
 all: school
 
-school: ${CC} ${SRC}
+school: ${SRC}
 	${CC} ${SRC} -o school
