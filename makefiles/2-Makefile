@@ -4,10 +4,10 @@ OBJ=main.o school.o
 NAME=school
 all: $(NAME)
 
-school : $(SRC)
+school: $(SRC)
 	$(CC) $^ -o $@
-school.o: $(SRC)
+school: $(SRC)
 	$(CC) -o $@ -c $<
-main.o: $(SRC)
+main: $(SRC)
 	$(CC) -o $@ -c $<
 
