@@ -4,7 +4,7 @@ OBJ=main.o school.o
 NAME=school
 all: main school
 
-school: school.o school.c
+school: school.c
 	$(CC) -o $(OBJ) -c $(SRC)
-main: main.o main.c
+main: main.c
 	$(CC) -o $(OBJ) -c $(SRC)
