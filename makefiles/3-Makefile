@@ -1,0 +1,25 @@
+CC=gcc
+SRC=main.c school.c
+OBJ=$(SRC:%.c=%.o)
+NAME=school
+RM=*.o school
+
+all: $(NAME)
+
+school:$(OBJ)
+	$(CC) $^ -o $@
+
+%.o:%.c
+	$(CC) -c -o $<
+
+clean:
+	rm -f *~ $(NAME)
+
+oclean:
+	rm -f $(wildcard *.o)
+
+fclean:
+	clean oclean
+
+re:
+	oclean all
