@@ -4,7 +4,7 @@
  * @c: is my char usualy in alpha
  * Return: 1 if it's uppercase, 0 if not
  */
-int _isupper(int c)
+int _isdigit(int c)
 {
 	char charac = c;
 
