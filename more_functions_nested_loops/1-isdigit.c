@@ -1,14 +1,13 @@
 #include "main.h"
 /**
- * _isupper - it tell if my param is upper or not
- * @c: is my char usualy in alpha
- * Return: 1 if it's uppercase, 0 if not
+ * _isdigit - it tell if my param is upper or not
+ * @c: is my number to be tested
+ * Return: 1 if it's between 0 to 9, 0 if not
  */
 int _isdigit(int c)
 {
-	char charac = c;
 
-	if (charac <= 48 && charac >= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);
