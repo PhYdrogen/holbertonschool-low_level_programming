@@ -5,7 +5,7 @@
  * @b: second number
  * Return: the number multiplied
  */
-int mul(int a, int b);
+int mul(int a, int b)
 {
 	return a*b;
 }
