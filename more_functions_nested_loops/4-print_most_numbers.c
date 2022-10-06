@@ -5,17 +5,17 @@
  */
 void print_most_numbers(void)
 {
-   int x;
-    char c = '0';
-    for (x = 0; x <= 9; x++)
-    {
-        if (c == '2' || c == '4')
-        {
-        }
-        else
-        {
-          _putchar(c);
-        }c++;
+	int x;
+	char c = '0';
 
-     } 
-}   
+	for (x = 0; x <= 9; x++)
+	{
+		if (c == '2' || c == '4')
+		{
+		}
+		else
+		{
+			_putchar(c);
+		} c++;
+	}
+}
