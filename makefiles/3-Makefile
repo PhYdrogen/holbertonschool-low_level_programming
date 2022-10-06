@@ -18,10 +18,6 @@ clean:
 oclean:
 	$(RM) -f $(wildcard *.o)
 
-fclean:
-	$(RM) -f *~ $(NAME)
-	$(RM) -f $(wildcard *.o)
+fclean: clean oclean
 
-re: $(OBJ)
-	$(RM) -f $(wildcard *.o)
-	$(CC) $^ -o $(NAME)
+re: oclean all 
