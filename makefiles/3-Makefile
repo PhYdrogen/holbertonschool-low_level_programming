@@ -24,4 +24,4 @@ fclean:
 
 re: $(OBJ)
 	$(RM) -f $(wildcard *.o)
-	$(CC) $^ -o $@
+	$(CC) $^ -o $(NAME)
