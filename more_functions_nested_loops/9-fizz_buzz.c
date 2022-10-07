@@ -9,7 +9,7 @@ int main(void)
 {
 	int x;
 
-	printf("1 ");
+	printf("1");
 	for (x = 2; x <= 100; x++)
 	{
 		if ((x % 3 == 0) && (x % 5 == 0))
