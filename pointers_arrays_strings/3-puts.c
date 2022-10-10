@@ -11,6 +11,6 @@ void _puts(char *str)
 
 	for (x = 0; *(str + x) != '\0'; x++)
 		{}
-	write(1,str,x);
-	write(1,"\n",1);
+	write(1, str, x);
+	write(1, "\n", 1);
 }
