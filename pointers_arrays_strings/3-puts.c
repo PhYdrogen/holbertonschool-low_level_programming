@@ -7,6 +7,10 @@
  */
 void _puts(char *str)
 {
-	write(1,str,sizeof(&str));
+	int x;
+
+	for (x = 0; *(str + x) != '\0'; x++)
+		{}
+	write(1,str,x);
 	write(1,"\n",1);
 }
