@@ -6,10 +6,12 @@
  */
 void puts2(char *str)
 {
+	int x, y;
+
 	for (x = 0; str[x] != '\0'; x++)
 	{
 		if ((x % 2) == 0)
-			putchar(s[x]);
+			putchar(str[x]);
 	}
 	putchar('\n');
 }
