@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * puts2 - print every other line
  * @str: take as input string
@@ -6,7 +7,7 @@
  */
 void puts2(char *str)
 {
-	int x, y;
+	int x;
 
 	for (x = 0; str[x] != '\0'; x++)
 	{
