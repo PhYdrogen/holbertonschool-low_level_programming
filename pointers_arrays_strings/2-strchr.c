@@ -8,24 +8,26 @@
  */
 char *_strchr(char *s, char c)
 {
-  int x, y, z;
-  char lt[300];
-  char *ltp = lt;
-  
-  for (x = 0; s[x] != '\0'; x++)
-    {}
-  /* x is my string length */
-  for (y = 0; s[y] != c; y++)
-    {
-		if (y>=x)
+	int x, y, z;
+	char lt[50];
+	char *ltp = lt;
+
+	for (x = 0; s[x] != '\0'; x++)
+	    {}
+	/* x is my string length */
+	for (y = 0; s[y] != c; y++)
+	{
+		if (y >= x)
 			return (NULL);
 	}
-  /* y is where i found my char*/
-  for (z = 0; z < x; y++)
-    {
-      lt[z] = s[y];
-      z++;
-    }
-  lt[z+1] = '\0';
-  return (ltp);
+
+	/* y is where i found my char*/
+	for (z = 0; z < x; y++)
+	{
+		lt[z] = s[y];
+		z++;
+	}
+
+	lt[z + 1] = '\0';
+	return (ltp);
 }
