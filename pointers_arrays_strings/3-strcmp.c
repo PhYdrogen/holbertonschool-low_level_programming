@@ -7,14 +7,21 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int x;
-
-	for (x = 0; s1[x] != '\0'; x++)
-	{
-		if (s1[x] != s2[x])
-		{
-			return (s1[x] - s2[x]);
-		}
-	}
-	return (0);
+  int x, y, z;
+  char lt[9];
+  char *ltp = lt;
+  
+  for (x = 0; s[x] != '\0'; x++)
+    {}
+  /* x is my string length */
+  for (y = 0; s[y] != c; y++)
+    {}
+  /* y is where i found my char*/
+  for (z = 0; z < x; y++)
+    {
+      lt[z] = s[y];
+      z++;
+    }
+  lt[z+1] = '\0';
+  return (ltp);
 }
