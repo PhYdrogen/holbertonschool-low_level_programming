@@ -9,7 +9,7 @@ char *leet(char *s)
 	char lettr[] = "AaEeOoTtLl";
 	char chiffr[] = "4433007711";
 	int y;
-	long unsigned int x;
+	unsigned long x;
 
 	for (y = 0; s[y] != '\0'; y++)
 	{
