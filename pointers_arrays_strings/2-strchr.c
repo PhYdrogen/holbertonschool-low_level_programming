@@ -8,7 +8,7 @@
 char *_strchr(char *s, char c)
 {
   int x, y, z;
-  char lt[9];
+  char lt[300];
   char *ltp = lt;
   
   for (x = 0; s[x] != '\0'; x++)
