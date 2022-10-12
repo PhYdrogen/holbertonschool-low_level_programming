@@ -15,7 +15,10 @@ char *_strchr(char *s, char c)
     {}
   /* x is my string length */
   for (y = 0; s[y] != c; y++)
-    {}
+    {
+		if (y>=x)
+			return (NULL);
+	}
   /* y is where i found my char*/
   for (z = 0; z < x; y++)
     {
