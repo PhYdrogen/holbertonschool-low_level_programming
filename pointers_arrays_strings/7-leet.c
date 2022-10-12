@@ -8,7 +8,8 @@ char *leet(char *s)
 {
 	char lettr[] = "AaEeOoTtLl";
 	char chiffr[] = "4433007711";
-	int x,y;
+	int y;
+	long unsigned int x;
 
 	for (y = 0; s[y] != '\0'; y++)
 	{
