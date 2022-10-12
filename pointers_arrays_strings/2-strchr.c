@@ -5,7 +5,7 @@
  * @c: the char it will be look up for
  * Return: the a pointer to the first occurrence of the character c
  */
-char *_strchr(char *s, char c);
+char *_strchr(char *s, char c)
 {
   int x, y, z;
   char lt[9];
