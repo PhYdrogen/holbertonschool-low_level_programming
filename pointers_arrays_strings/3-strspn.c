@@ -7,17 +7,20 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int x, y = 0, z = 0, i;
+	int x, y = 0, z = 0, i, j;
+
+	for (j = 0; accept[j] != '\0'; j++)
+	{}
 
 	for (x = 0; s[x] != '\0'; x++)
 	{
-		for (i = 0; i < 4; i++)
+		for (i = 0; i < j; i++)
 		{
 			if (s[x] == accept[i])
 			{
 				z++;
 				y = 0;
-				i = 4;
+				i = j;
 				continue;
 			}
 			if (i == 3 && y > 0)
