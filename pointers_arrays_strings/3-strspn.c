@@ -23,7 +23,7 @@ unsigned int _strspn(char *s, char *accept)
 				i = j;
 				continue;
 			}
-			if (i == 3 && y > 0)
+			if (i == (j - 1) && y > 0)
 				return (z);
 
 			y++;
