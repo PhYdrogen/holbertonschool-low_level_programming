@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 /**
  * _strpbrk - search in string s of byte accept
  * @s: the string
@@ -21,4 +22,5 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
+	return (NULL);
 }
