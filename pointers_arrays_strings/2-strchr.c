@@ -9,8 +9,7 @@
 char *_strchr(char *s, char c)
 {
 	int x, y, z;
-	char lt[50];
-	char *ltp = lt;
+	static char lt[50];
 
 	for (x = 0; s[x] != '\0'; x++)
 	    {}
@@ -27,7 +26,5 @@ char *_strchr(char *s, char c)
 		lt[z] = s[y];
 		z++;
 	}
-
-	lt[z + 1] = '\0';
-	return (ltp);
+	return (lt);
 }
