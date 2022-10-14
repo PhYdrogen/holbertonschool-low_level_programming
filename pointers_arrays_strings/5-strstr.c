@@ -24,7 +24,7 @@ char *_strstr(char *haystack, char *needle)
 			while (*haystack++ == *needle++)
 			{
 				if (*needle == needle[x])
-					return (ori);
+					return (haystack);
 			}
 
 		}
