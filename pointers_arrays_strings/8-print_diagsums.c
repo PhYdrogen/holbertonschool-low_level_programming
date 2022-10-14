@@ -8,7 +8,7 @@
  */
 void print_diagsums(int *a, int size)
 {
-	unsigned int i, res1 = 0, res2 = 0;
+	int i, res1 = 0, res2 = 0;
 
 	for (i = 0; i < (size * size); i++)
 	{
