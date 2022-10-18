@@ -8,7 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int res = 0, x;
+	int res = 0, x, y;
+
 	for (x = 1; x < argc ; x++)
 	{
 		if (argc < 1)
@@ -16,13 +17,17 @@ int main(int argc, char *argv[])
 			printf("O");
 			return (0);
 		}
-		if (atoi(argv[x]) == 0)
+		for (y = 0; argv[x][y] != '\0'; y++)
 		{
-			printf("Error");
-			return (1);
+			if (argv[x][y] >= '0' && argv[x][y] <= '9')
+				res += atoi(argv[x]);
+
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-			res += atoi(argv[x]);
 	}
 	printf("%d\n", res);
 	return (0);
