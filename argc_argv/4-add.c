@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int res = 0, x, y;
 
-	for (x = 1; x < argc ; x++)
+	for (x = 0; x < argc ; x++)
 	{
 		if (argc < 1)
 		{
