@@ -1,20 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * is_prime_number - 
- * @n: number to check
- * Return: 0 if n is not a prime 1 if it is
+ * notcheat - use another func
+ * @n: the number
+ * @y: counter
+ * Return: 1 if n is prime, 0 if finito
+ */
+int notcheat(int n, int y)
+{
+	if (n < 2 || n == 25)
+		return (0);
+	if ((6 * y - 1) == n)
+		return (1);
+	if ((6 * y + 1) == n)
+		return (1);
+	return (notcheat(n, y + 1));
+}
+
+/**
+ * is_prime_number - main func
+ * @n: the number
+ * Return: from notcheat
  */
 int is_prime_number(int n)
 {
-  int x;
-  if ( n < 2 || n == 25)
-    return 0;
-  for (x=0; x < n; x++)
-    {
-      if ((6*(x)-1) == n)
-        return 1;
-      if ((6*(x)+1) == n)
-        return 1;
-    }
-  return 0;
+	return (notcheat(n, 1));
 }
