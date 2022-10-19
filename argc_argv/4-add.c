@@ -2,32 +2,30 @@
 #include <stdlib.h>
 /**
  * main - entry point
- * @argc: number of arg
+ * @argc: nm of arg
  * @argv: list of arg
- * Return: 0 if no error
+ * Return: return 1 if error else 0
  */
 int main(int argc, char *argv[])
 {
-	int res = 0, x, y;
+	int res = 0, x, i;
 
+	if (argc <= 1)
+	{
+		printf("O");
+		return (1);
+	}
 	for (x = 1; x < argc ; x++)
 	{
-		if (argc < 1)
+		for (i = 0; argv[x][i] != '\0'; i++)
 		{
-			printf("O");
-			return (0);
-		}
-		for (y = 0; argv[x][y] != '\0'; y++)
-		{
-			if (argv[x][y] >= '0' && argv[x][y] <= '9')
-				res += atoi(argv[x]);
-
-			else
+			if (argv[x][i] == 'e')
 			{
-				printf("Error\n");
+				printf("Error");
 				return (1);
 			}
 		}
+		res += atoi(argv[x]);
 	}
 	printf("%d\n", res);
 	return (0);
