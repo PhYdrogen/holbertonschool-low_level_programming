@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
 	if (argc <= 1)
 	{
-		printf("O");
+		printf("0");
 		return (1);
 	}
 	for (x = 1; x < argc ; x++)
