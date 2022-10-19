@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		{
 			if (argv[x][i] == 'e')
 			{
-				printf("Error");
+				printf("Error\n");
 				return (1);
 			}
 		}
