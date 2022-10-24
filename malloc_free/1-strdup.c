@@ -9,12 +9,15 @@
  */
 char *_strdup(char *str)
 {
+	if (str == NULL)
+		return (NULL);
+
 	char *stringu;
 	int x;
 
 	stringu = malloc(strlen(str) * sizeof(char));
 
-	if (str == NULL || stringu == NULL)
+	if (stringu == NULL)
 		return (NULL);
 
 	for (x = 0; str[x] != '\0'; x++)
