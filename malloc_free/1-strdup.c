@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 /**
  * _strdup - duplicate string
  * @str: string to duplicate
