@@ -28,7 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			p[x] = s1[x];
 		for (y = 0; y < ls2; y++)
 			p[x + y] = s2[y];
-		p[x + y + 1] = '\0';
+		p[x + y] = '\0';
 		return (p);
 	}
 	else
@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			p[x] = s1[x];
 		for (y = 0; y < n; y++)
 			p[x + y] = s2[y];
-		p[ls1 + y + 1] = '\0';
+		p[ls1 + y] = '\0';
 		return (p);
 	}
 	return (p);
