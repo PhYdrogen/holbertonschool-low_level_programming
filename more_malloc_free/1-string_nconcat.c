@@ -10,40 +10,38 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *p;
-	int x, ls1;
+	unsigned int x, y, ls1, ls2;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 	ls1 = strlen(s1);
+	ls2 = strlen(s2);
 
-	if (n >= strlen(s2))
+	if (n >= ls2)
 	{
-		p = realloc(s1, (strlen(s2) + 1));
+		p = malloc(sizeof(char) * ls1 + ls2 + 1);
 		if (p == NULL)
 			return (NULL);
-		/**/
-		for (x = 0; x < strlen(s2); x++)
-		{
-			p[ls1 + x] = s2[x];
-		}
-		p[ls1 + x + 1] = '\0';
+		for (x = 0; x < ls1; x++)
+			p[x] = s1[x];
+		for (y = 0; y < ls2; y++)
+			p[x + y] = s2[y];
+		p[x + y + 1] = '\0';
 		return (p);
 	}
 	else
 	{
-		p = realloc(s1, (n + 1));
+		p = malloc(sizeof(char) * ls1 + n + 1);
 		if (p == NULL)
 			return (NULL);
-		/**/
-		for (x = 0; x < n; x++)
-		{
-			p[ls1 + x] = s2[x];
-		}
+		for (x = 0; x < ls1; x++)
+			p[x] = s1[x];
+		for (y = 0; y < ls2; y++)
+			p[x + y] = s2[y];
 		p[ls1 + x + 1] = '\0';
 		return (p);
 	}
-
 	return (p);
 }
