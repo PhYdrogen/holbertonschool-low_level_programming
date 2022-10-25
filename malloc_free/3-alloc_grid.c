@@ -18,7 +18,6 @@ int **alloc_grid(int width, int height)
 	if (list == NULL)
 	{
 		free(list);
-		list = 0;
 		return (NULL);
 	}
 
@@ -28,7 +27,6 @@ int **alloc_grid(int width, int height)
 		if (list[i] == NULL)
 		{
 			free(list[i]);
-			list[i] = 0;
 			return (NULL);
 		}
 
