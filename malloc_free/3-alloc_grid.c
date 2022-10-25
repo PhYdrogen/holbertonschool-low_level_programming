@@ -7,7 +7,7 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **list, i, x;
+	int **list, i, x, y;
 	/* check if one of my var is not inf to zero */
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -18,6 +18,7 @@ int **alloc_grid(int width, int height)
 	if (list == NULL)
 	{
 		free(list);
+		list = 0;
 		return (NULL);
 	}
 
@@ -26,7 +27,12 @@ int **alloc_grid(int width, int height)
 		list[i] = malloc(sizeof(int) * width);
 		if (list[i] == NULL)
 		{
-			free(list[i]);
+			for (y = i; y != 0; y++)
+			{
+				free(list[y]);
+				list[y] = 0;
+			}
+			free(list);
 			return (NULL);
 		}
 
