@@ -15,10 +15,23 @@ int **alloc_grid(int width, int height)
 	/* allocate the 2d array of int * because i point to a pointer because */
 	/* this is a array composing of pointer and a pointer is 8 bytes */
 	list = malloc(sizeof(int *) * height);
+	if (list == NULL)
+	{
+		free(list);
+		list = 0;
+		return (NULL);
+	}
 
 	for (i = 0; i < height; i++)
 	{
 		list[i] = malloc(sizeof(int) * width);
+		if (list[i] == NULL)
+		{
+			free(list[i]);
+			list[i] = 0;
+			return (NULL);
+		}
+
 
 		for (x = 0; x < width; x++)
 		{
