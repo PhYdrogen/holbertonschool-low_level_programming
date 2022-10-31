@@ -9,32 +9,32 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *d;
-	char *savename;
-	char *saveowner;
+	int namelen;
+	int ownlen;
 
 	d = malloc(sizeof(struct dog));
 	if (d == NULL)
 	{
+		return (NULL);
+	}
+	namelen = strlen(name) + 1;
+	ownlen = strlen(owner) + 1;
+
+	d->name = malloc(namelen);
+	if (d->name == NULL)
+	{
+		free(d->name);
+		return (NULL);
+	}
+	strcpy(d->name, name);
+	d->owner = malloc(ownlen);
+	if (d->owner == NULL)
+	{
+		free(d->owner);
 		free(d);
 		return (NULL);
 	}
-	savename = malloc(sizeof(name));
-	saveowner = malloc(sizeof(owner));
-	if (savename == NULL || saveowner == NULL)
-	{
-		free(savename);
-		free(saveowner);
-		return (NULL);
-	}
-	/*save a copy*/
-	savename = name;
-	savename += ' ';
-	saveowner = owner;
-	saveowner += ' ';
-
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	strcpy(d->owner, owner);
 
 	return (d);
 }
