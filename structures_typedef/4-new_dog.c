@@ -26,11 +26,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(saveowner);
 		return (NULL);
 	}
+	/*save a copy*/
+	savename = name;
+	savename += ' ';
+	saveowner = owner;
+	saveowner += ' ';
+
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
-	/*save a copy*/
-	savename = name;
-	saveowner = owner;
+
 	return (d);
 }
