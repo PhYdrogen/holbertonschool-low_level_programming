@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdio.h>
 /**
  * init_dog - init a new dog in earth 347
  * @d: a struct for dog
@@ -8,6 +9,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	if (d == NULL)
+		return;
 	struct dog;
 
 	d->name = name;
