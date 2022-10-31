@@ -9,6 +9,8 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *d;
+	char *savename;
+	char *saveowner;
 
 	d = malloc(sizeof(struct dog));
 	if (d == NULL)
@@ -16,8 +18,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d);
 		return (NULL);
 	}
+	savename = malloc(sizeof(name));
+	saveowner = malloc(sizeof(owner));
+	if (savename == NULL || saveowner == NULL)
+	{
+		free(savename);
+		free(saveowner);
+		return (NULL);
+	}
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
+	/*save a copy*/
+	savename = name;
+	saveowner = owner;
 	return (d);
 }
