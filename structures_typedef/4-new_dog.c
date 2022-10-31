@@ -8,7 +8,7 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *d;
+	dog_t *d;
 	int namelen;
 	int ownlen;
 
@@ -23,6 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d->name = malloc(namelen);
 	if (d->name == NULL)
 	{
+		free(d->name);
 		free(d);
 		return (NULL);
 	}
