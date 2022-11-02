@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (99);
 	}
-	if (argc > 4 || argc < 3)
+	if (argc > 4 || argc <= 3)
 	{
 		printf("Error\n");
 		exit(98);
