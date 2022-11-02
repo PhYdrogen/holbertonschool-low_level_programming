@@ -9,19 +9,25 @@ int main(int argc, char *argv[])
 {
 	int nb1, nb2;
 	char *sign;
-
 	(void)argc;
-	nb1 = atoi(argv[1]);
-	nb2 = atoi(argv[3]);
-	sign = argv[2];
 
-	if (strlen(sign) > 1)
+	if (argc == 3)
 	{
-		printf("Error\n");
-		exit(99);
-	}
-	if (argc == 4)
-	{
+		nb1 = atoi(argv[1]);
+		nb2 = atoi(argv[3]);
+		sign = argv[2];
+
+		if (strlen(sign) > 1)
+		{
+			printf("Error\n");
+			exit(99);
+		}
+
+		nb1 = atoi(argv[1]);
+		nb2 = atoi(argv[3]);
+		sign = argv[2];
+
+
 		printf("%d\n", get_op_func(sign)(nb1, nb2));
 		return (0);
 	}
