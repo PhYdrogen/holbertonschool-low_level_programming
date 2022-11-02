@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	char *sign;
 	(void)argc;
 
-	if (argc == 3)
+	if (argc != 3)
 	{
 		nb1 = atoi(argv[1]);
 		nb2 = atoi(argv[3]);
