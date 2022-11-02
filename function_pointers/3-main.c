@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (99);
 	}
-	if (argc > 4)
+	if (argc > 4 || argc < 3)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	printf("%d\n", get_op_func(sign)(nb1, nb2));
