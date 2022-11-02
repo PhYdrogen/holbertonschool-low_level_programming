@@ -11,20 +11,22 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list liste;
 
 	va_start(liste, n);
-	num = va_arg(liste, int);
+	x = n;
 
 	if (separator == NULL)
 		return;
 
 	if (n > 0)
 	{
-		for (x = 0; x <= n; x++)
+		for (; x > 0; x--)
 		{
-			if ((x + 1) == n)
+			num = va_arg(liste, int);
+			if (x == 1)
 				printf("%d", num);
 			else
 				printf("%d%s", num, separator);
 		}
 		printf("\n");
 	}
+	va_end(liste);
 }
