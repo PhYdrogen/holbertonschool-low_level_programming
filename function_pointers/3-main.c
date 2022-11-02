@@ -18,13 +18,17 @@ int main(int argc, char *argv[])
 	if (strlen(sign) > 1)
 	{
 		printf("Error\n");
-		return (99);
+		exit(99);
 	}
-	if (argc > 4 || argc <= 3)
+	if (argc == 4)
+	{
+		printf("%d\n", get_op_func(sign)(nb1, nb2));
+		return (0);
+	}
+	else
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	printf("%d\n", get_op_func(sign)(nb1, nb2));
-	return (0);
+
 }
