@@ -39,7 +39,7 @@ int op_div(int a, int b)
 {
 	if (b == 0)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
 	}
 	else
@@ -55,7 +55,7 @@ int op_mod(int a, int b)
 {
 	if (b == 0)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
 	}
 	else

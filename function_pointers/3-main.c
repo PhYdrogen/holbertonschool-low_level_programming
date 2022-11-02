@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
 
 	if (strlen(sign) > 1)
 	{
-		printf("Error");
-		return (1);
+		printf("Error\n");
+		return (99);
 	}
 	if (argc > 4)
 	{
