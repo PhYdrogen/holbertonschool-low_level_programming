@@ -12,9 +12,6 @@ void print_all(const char * const format, ...)
 	char *s, *sep;
 
 	va_start(liste, format);
-	if (format == NULL)
-	{ printf("\n");
-		return; }
 	n = strlen(format);
 	type = format;
 	sep = ", ";
