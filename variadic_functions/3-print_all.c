@@ -61,8 +61,6 @@ void print_all(const char * const format, ...)
 {
 	if (format != NULL)
 	{
-
-
 		fmt_t signe[] = {
 			{"c", print_char},
 			{"i", print_int},
@@ -79,10 +77,9 @@ void print_all(const char * const format, ...)
 		sep = "";
 		while (n != 0)
 		{
-			i = 0;
-			while (i < 5)
+			while (i < 4)
 			{
-				if (*signe[i].s == format[k])
+				if (signe[i].s[0] == format[k])
 				{
 					signe[i].f(liste, sep);
 					sep = ", ";
@@ -90,9 +87,11 @@ void print_all(const char * const format, ...)
 				}
 				i++;
 			}
+			i = 0;
 			k++;
 			n--;
 		}
+	va_end(liste);
 	}
 	printf("\n");
 }
