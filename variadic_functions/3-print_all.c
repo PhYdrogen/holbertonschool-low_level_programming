@@ -49,8 +49,6 @@ void print_string(va_list ap, char *sep)
 	char *i;
 
 	i = va_arg(ap, char*);
-	if (i == NULL)
-		i = "(nil)";
 	printf("%s%s", sep, i);
 }
 /**
@@ -61,35 +59,40 @@ void print_string(va_list ap, char *sep)
 
 void print_all(const char * const format, ...)
 {
-	fmt_t signe[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string},
-		{NULL, NULL}
-	};
-	int n = 0, i = 0, k = 0;
-	va_list liste;
-	char *sep;
-
-	va_start(liste, format);
-	n = strlen(format);
-	sep = "";
-	while (n != 0)
+	if (format != NULL)
 	{
-		i = 0;
-		while (i < 5)
+
+
+		fmt_t signe[] = {
+			{"c", print_char},
+			{"i", print_int},
+			{"f", print_float},
+			{"s", print_string},
+			{NULL, NULL}
+		};
+		int n = 0, i = 0, k = 0;
+		va_list liste;
+		char *sep;
+
+		va_start(liste, format);
+		n = strlen(format);
+		sep = "";
+		while (n != 0)
 		{
-			if (*signe[i].s == format[k])
+			i = 0;
+			while (i < 5)
 			{
-				signe[i].f(liste, sep);
-				sep = ", ";
-				break;
+				if (*signe[i].s == format[k])
+				{
+					signe[i].f(liste, sep);
+					sep = ", ";
+					break;
+				}
+				i++;
 			}
-			i++;
+			k++;
+			n--;
 		}
-		k++;
-		n--;
 	}
 	printf("\n");
 }
