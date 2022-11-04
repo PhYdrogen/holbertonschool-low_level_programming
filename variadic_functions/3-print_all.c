@@ -49,6 +49,7 @@ void print_string(va_list ap, char *sep)
 	char *i;
 
 	i = va_arg(ap, char*);
+	i = i == NULL ? "(nil)" : i;
 	printf("%s%s", sep, i);
 }
 /**
