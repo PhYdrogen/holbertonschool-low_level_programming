@@ -1,49 +1,95 @@
 #include "variadic_functions.h"
-#include <string.h>
+/**
+ * print_char - print char
+ * @ap: the letter coming from the va_arg
+ * @sep: the separator
+ * Return: none
+ */
+void print_char(va_list ap, char *sep)
+{
+	char i;
+
+	i = va_arg(ap, int);
+	printf("%s%c", sep, i);
+}
+/**
+ * print_int - print int
+ * @ap: the letter coming from the va_arg
+ * @sep: the separator
+ * Return: none
+ */
+void print_int(va_list ap, char *sep)
+{
+	int i;
+
+	i = va_arg(ap, int);
+	printf("%s%d", sep, i);
+}
+/**
+ * print_float - print float
+ * @ap: the letter coming from the va_arg
+ * @sep: the separator
+ * Return: none
+ */
+void print_float(va_list ap, char *sep)
+{
+	float i;
+
+	i = va_arg(ap, double);
+	printf("%s%f", sep, i);
+}
+/**
+ * print_string - print string
+ * @ap: the letter coming from the va_arg
+ * @sep: the separator
+ * Return: none
+ */
+void print_string(va_list ap, char *sep)
+{
+	char *i;
+
+	i = va_arg(ap, char*);
+	if (i == NULL)
+		i = "(nil)";
+	printf("%s%s", sep, i);
+}
 /**
  * print_all - a small printf
  * @format: the format use if this fn
  * Return: none
  */
-void print_all(const char * const format, ...)
-{	int n;
-	const char *type;
-	va_list liste;
-	char *s, *sep;
 
-	if (format == NULL)
-	{ printf("\n");
-		return; }
+void print_all(const char * const format, ...)
+{
+	fmt_t signe[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+	int n = 0, i = 0, k = 0;
+	va_list liste;
+	char *sep;
+
 	va_start(liste, format);
 	n = strlen(format);
-	type = format;
-	sep = ", ";
-	while (n > 0)
+	sep = "";
+	while (n != 0)
 	{
-		while (n == 1)
-		{ sep = "";
-			break; }
-		switch (*type)
+		i = 0;
+		while (i < 5)
 		{
-		case 'c':
-			printf("%c%s", va_arg(liste, int), sep);
-			break;
-		case 'i':
-			printf("%d%s", va_arg(liste, int), sep);
-			break;
-		case 'f':
-			printf("%f%s", va_arg(liste, double), sep);
-			break;
-		case 's':
-			s = va_arg(liste, char*);
-			if (s == NULL)
-				s = "(nil)";
-			printf("%s%s", s, sep);
-			break;
-		default:
-			break;
+			if (*signe[i].s == format[k])
+			{
+				signe[i].f(liste, sep);
+				sep = ", ";
+				break;
+			}
+			i++;
 		}
+		k++;
 		n--;
-		type++;
-	} printf("\n");
-	va_end(liste); }
+	}
+	printf("\n");
+}
