@@ -10,6 +10,8 @@ size_t list_len(const list_t *h)
 	struct list_s *temp;
 
 	temp = malloc(sizeof(list_t));
+	if (h->next == 0)
+		count++;
 	while (h != NULL && (temp->next != h->next))
 	{
 		temp->next = h->next;
