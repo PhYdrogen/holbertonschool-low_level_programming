@@ -6,12 +6,10 @@
  */
 void free_list(list_t *head)
 {
-	if (head == NULL)
-	{
-		return;
-	}
 	struct list_s *tmp;
 
+	if (head == NULL)
+		return;
 	while (head != NULL)
 	{
 		tmp = head->next;
