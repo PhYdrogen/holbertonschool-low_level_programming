@@ -9,6 +9,9 @@ void free_listint(listint_t *head)
 {
 	struct listint_s *tmp;
 
+	if (head == NULL)
+		exit(99);
+
 	while (head != NULL)
 	{
 		tmp = head->next;
