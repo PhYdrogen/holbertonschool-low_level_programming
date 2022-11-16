@@ -38,12 +38,13 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		*head = (*head)->next;
 		count++;
 	}
-	if ((count + 1) == index)
+	if (count != index)
 	{
-		tmp2->next = (*head)->next;
-		free(*head);
-		*head = tmp;
-		return (1);
+		return (-1);
 	}
-	return (-1);
+	tmp2->next = (*head)->next;
+	free(*head);
+	*head = tmp;
+
+	return (1);
 }
