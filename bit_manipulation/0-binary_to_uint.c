@@ -7,23 +7,24 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i, j, result = 0;
+	int i = 0, j = 0, result = 0;
 
 
 	if (b == NULL)
 		return (0);
 
+	i = strlen(b);
 	/*strlen a*/
 	/*loop in a and if i have a 1*/
-	for (i = strlen(b); i > 1; i--)
+	for (; i > 0; i--)
 	{
-		if (*b == 48 || *b == 49)
+		if (b[i - 1] == 48 || b[i - 1] == 49)
 		{
-			if (*b == 49)
+			if (b[i - 1] == 49)
 			{
 				result += 1 << j;
 			}
-		j++;
+			j++;
 		}
 		else
 		{
