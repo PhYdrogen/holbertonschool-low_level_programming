@@ -10,7 +10,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	int x = 0, count = 0, nd = 0, md = 0, arch = 0;
 
-	if (n == 4294967295)
+	if (n > 4294967290)
 		arch = 64;
 	else
 		arch = 32;
