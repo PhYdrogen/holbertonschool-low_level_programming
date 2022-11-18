@@ -20,8 +20,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		if (x == 32)
 		{
-			nd /= 2;
-			md /= 2;
+			nd = nd >> 2;
+			md = md >> 2;
 		}
 		else
 		{
