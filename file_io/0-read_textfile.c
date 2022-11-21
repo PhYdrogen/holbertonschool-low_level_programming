@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (-1);
 
 	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	if (fd < 0)
 		return (0);
 
 	cp = read(fd, buffer, letters);
@@ -28,9 +28,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buffer[cp] = '\0';
 
-	if (write(1, buffer, cp) != cp)
+	if (write(1, buffer, strlen(buffer)) != (ssize_t) strlen(buffer))
 	{
-		write(2, buffer, cp);
 		return (0);
 	}
 
