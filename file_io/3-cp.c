@@ -18,8 +18,18 @@ int main(int ac, char **av)
 	}
 
 	fd[0] = open(av[1], O_RDONLY);
-	fd[1] = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd[0] == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 
+	fd[1] = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd[1] == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[2]);
+		exit(98);
+	}
 	while (nbchar > 0)
 	{
 		size = read(fd[0], buffer, 1024);
@@ -34,6 +44,7 @@ int main(int ac, char **av)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[2]);
 			exit(98);
+
 		}
 	}
 
