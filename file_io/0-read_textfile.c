@@ -28,9 +28,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buffer[cp] = '\0';
 
-	wr = write(1, buffer, cp);
-	if (wr == -1)
+	if (write(1, buffer, cp) != cp)
+	{
+		write(2, buffer, cp);
 		return (0);
+	}
 
 	close(fd);
 	return (cp);
