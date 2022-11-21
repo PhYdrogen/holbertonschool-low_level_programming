@@ -28,7 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buffer[cp] = '\0';
 
-	if (write(1, buffer, strlen(buffer)) != (ssize_t) strlen(buffer))
+	if (write(2, buffer, strlen(buffer)) != (ssize_t) strlen(buffer))
 	{
 		return (0);
 	}
