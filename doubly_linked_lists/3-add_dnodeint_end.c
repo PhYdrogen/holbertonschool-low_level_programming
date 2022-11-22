@@ -5,11 +5,11 @@
  * @n: the data
  * Return: the node
  */
-listint_t *add_dnodeint_end(listint_t **head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	listint_t *new, *tmp;
+	dlistint_t *new, *tmp;
 
-	new = malloc(sizeof(listint_t));
+	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		exit(99);
 

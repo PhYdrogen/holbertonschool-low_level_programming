@@ -4,7 +4,7 @@
  * @head: the header
  * Return: the sum
  */
-int sum_dlistint(listint_t *head)
+int sum_dlistint(dlistint_t *head)
 {
 	int sum;
 

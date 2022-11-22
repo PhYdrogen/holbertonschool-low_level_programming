@@ -6,14 +6,15 @@
  * @n: the data
  * Return: the node
  */
-listint_t *insert_dnodeint_at_index(listint_t **head, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
+		int n)
 {
-	listint_t *new, *tmp, *tmp2;
+	dlistint_t *new, *tmp, *tmp2;
 	unsigned int count;
 
 	count = 0;
 	/*init struct node*/
-	new = malloc(sizeof(listint_t));
+	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (0);
 

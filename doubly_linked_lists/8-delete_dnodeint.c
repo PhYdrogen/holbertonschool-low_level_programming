@@ -5,9 +5,9 @@
  * @index: the index to delete
  * Return: the succes of the mission
  */
-int delete_dnodeint_at_index(listint_t **head, unsigned int index)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	listint_t *tmp, *tmp2;
+	dlistint_t *tmp, *tmp2;
 	unsigned int count = 0;
 
 	if (*head == NULL)

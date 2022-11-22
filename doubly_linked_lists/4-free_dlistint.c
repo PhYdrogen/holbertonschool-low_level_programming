@@ -5,9 +5,9 @@
  * @head: the mem
  * Return: none
  */
-void free_dlistint(listint_t *head)
+void free_dlistint(dlistint_t *head)
 {
-	struct listint_s *tmp;
+	struct dlistint_s *tmp;
 
 	if (head == NULL)
 		return;

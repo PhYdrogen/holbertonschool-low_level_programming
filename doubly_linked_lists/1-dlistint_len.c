@@ -5,7 +5,7 @@
  * @h: the header node
  * Return: a number
  */
-size_t dlistint_len(const listint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 	int count = 0;
 

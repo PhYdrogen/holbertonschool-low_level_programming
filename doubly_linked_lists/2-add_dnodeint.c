@@ -7,11 +7,11 @@
  * Return: the node created
  */
 
-listint_t *add_dnodeint(listint_t **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	listint_t *new;
+	dlistint_t *new;
 
-	new = malloc(sizeof(listint_t));
+	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		exit(99);
 
