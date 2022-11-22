@@ -35,7 +35,7 @@ int main(int ac, char **av)
 		size = read(fd[0], buffer, 1024);
 		if (size == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
 		nbchar = write(fd[1], buffer, size);
