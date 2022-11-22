@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * add_nodeint - add node
+ * add_dnodeint - add node
  * @head: the header
  * @n: the data to write to it
  * Return: the node created
  */
 
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_dnodeint(listint_t **head, const int n)
 {
 	listint_t *new;
 

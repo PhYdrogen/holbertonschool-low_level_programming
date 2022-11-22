@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * listint_len - function that returns the number of elements in a linked
+ * dlistint_len - function that returns the number of elements in a linked
  * @h: the header node
  * Return: a number
  */
-size_t listint_len(const listint_t *h)
+size_t dlistint_len(const listint_t *h)
 {
 	int count = 0;
 

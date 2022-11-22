@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * free_listint - free a list in order to clean memory
+ * free_dlistint - free a list in order to clean memory
  * @head: the mem
  * Return: none
  */
-void free_listint(listint_t *head)
+void free_dlistint(listint_t *head)
 {
 	struct listint_s *tmp;
 

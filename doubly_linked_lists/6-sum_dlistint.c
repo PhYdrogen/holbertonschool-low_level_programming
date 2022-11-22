@@ -1,10 +1,10 @@
 #include "lists.h"
 /**
- * sum_listint - make a sum of the linked list
+ * sum_dlistint - make a sum of the linked list
  * @head: the header
  * Return: the sum
  */
-int sum_listint(listint_t *head)
+int sum_dlistint(listint_t *head)
 {
 	int sum;
 

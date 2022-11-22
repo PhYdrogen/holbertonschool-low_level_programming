@@ -1,11 +1,11 @@
 #include "lists.h"
 /**
- * delete_nodeint_at_index - delete node
+ * delete_dnodeint_at_index - delete node
  * @head: the header
  * @index: the index to delete
  * Return: the succes of the mission
  */
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
+int delete_dnodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *tmp, *tmp2;
 	unsigned int count = 0;

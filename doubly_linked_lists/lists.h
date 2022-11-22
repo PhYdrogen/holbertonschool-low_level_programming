@@ -23,8 +23,6 @@ size_t dlistint_len(const listint_t *h);
 listint_t *add_dnodeint(listint_t **head, const int n);
 listint_t *add_dnodeint_end(listint_t **head, const int n);
 void free_dlistint(listint_t *head);
-void free_dlistint2(listint_t **head);
-int pop_dlistint(listint_t **head);
 listint_t *get_dnodeint_at_index(listint_t *head, unsigned int index);
 int sum_dlistint(listint_t *head);
 listint_t *insert_dnodeint_at_index(listint_t **head, unsigned int idx, int n);
