@@ -13,11 +13,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
 	unsigned int count;
 
 	count = 0;
-	/*init struct node*/
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (0);
-
 	/*make a save of the header*/
 	tmp2 = *head;
 	/*affect node value*/
