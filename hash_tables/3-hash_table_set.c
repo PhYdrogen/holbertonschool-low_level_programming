@@ -20,15 +20,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new = calloc(1, sizeof(hash_node_t));
 	if (!new)
 		return (0);
-
 	savekey = strdup(key);
 	if (savekey == NULL)
 		return (0);
-
 	savevalue = strdup(value);
 	if (savevalue == NULL)
 		return (0);
-
 	new->key = savekey;
 	new->value = savevalue;
 	new->next = NULL;
