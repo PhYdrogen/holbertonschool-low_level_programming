@@ -21,13 +21,20 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (strcmp(ht->array[index]->key, key) == 0)
 	{
 		tmp = ht->array[index];
-		while (tmp->next != NULL)
+		if (tmp->next == NULL)
 		{
-			if (tmp->next == NULL)
+			return (ht->array[index]->value);
+		}
+		else
+		{
+			while (tmp->next != NULL)
 			{
-				return (ht->array[index]->value);
+				if (tmp->next == NULL)
+				{
+					return (ht->array[index]->value);
+				}
+				tmp = tmp->next;
 			}
-			tmp = tmp->next;
 		}
 	}
 	return (0);
