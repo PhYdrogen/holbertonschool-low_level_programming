@@ -18,24 +18,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht->array[index] == NULL)
 		return (0);
 
-	if (strcmp(ht->array[index]->key, key) == 0)
+	tmp = ht->array[index];
+	while (tmp != NULL)
 	{
-		tmp = ht->array[index];
-		if (tmp->next == NULL)
-		{
-			return (ht->array[index]->value);
-		}
-		else
-		{
-			while (tmp->next != NULL)
-			{
-				if (tmp->next == NULL)
-				{
-					return (ht->array[index]->value);
-				}
-				tmp = tmp->next;
-			}
-		}
+		if (strcmp(tmp->key, key) == 0)
+			return (tmp->value);
+
+		tmp = tmp->next;
 	}
 	return (0);
 }
