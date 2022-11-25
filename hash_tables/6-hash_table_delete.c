@@ -18,15 +18,17 @@ void hash_table_delete(hash_table_t *ht)
 		while (head)
 		{
 			if (head->next)
+			{
 				tmp2 = head->next;
-
+				free(tmp2->value);
+				free(tmp2->key);
+				free(tmp2);
+			}
 			free(head->value);
 			free(head->key);
 			free(head);
-			head = tmp2->next;
+			head = NULL;
 		}
-		free(head);
 	}
-	free(head);
 	free(ht);
 }
