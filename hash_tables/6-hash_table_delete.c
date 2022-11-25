@@ -1,6 +1,10 @@
 #include "hash_tables.h"
 
-
+/**
+ * delete_node - suppr node
+ * @item: the node to suppr
+ * Return: none
+ */
 void delete_node(hash_node_t *item)
 {
 	free(item->key);
