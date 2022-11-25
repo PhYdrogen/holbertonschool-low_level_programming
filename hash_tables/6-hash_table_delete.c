@@ -1,4 +1,12 @@
 #include "hash_tables.h"
+
+
+void delete_node(hash_node_t *item)
+{
+	free(item->key);
+	free(item->value);
+	free(item);
+}
 /**
  * hash_table_delete - delete the hash table
  * @ht: the hash table
@@ -6,7 +14,7 @@
  */
 void hash_table_delete(hash_table_t *ht)
 {
-	hash_node_t *head;
+	hash_node_t *head, *tmp2;
 	unsigned long int i = 0;
 
 	head = NULL;
@@ -21,9 +29,13 @@ void hash_table_delete(hash_table_t *ht)
 
 		while (head != NULL)
 		{
-			free(head->value);
-			free(head->key);
-			free(head);
+			while (head->next != NULL)
+			{
+				tmp2 = head->next;
+				delete_node(head);
+				head = tmp2;
+			}
+			delete_node(head);
 			head = NULL;
 		}
 	}
