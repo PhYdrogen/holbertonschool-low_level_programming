@@ -1,38 +1,60 @@
 #include "search_algos.h"
-void print_array(int *array, size_t l, size_t r)
+/**
+ * print_array - format the output
+ * @array: the array
+ * @end: the end of the array
+ * @start: where it should start
+ */
+void print_array(int *array, int end, int start)
 {
-    size_t i;
-    for (i = l; i <= r; i++)
-    {
-        printf("%d", array[i]);
-        if (i < r)
-        {
-            printf(", ");
-        }
-    }
-    printf("\n");
-}
+	int j = start;
+	char del;
 
+	printf("Searching in array: ");
+
+	for (; j < end; j++)
+	{
+		del = ',';
+		printf("%i%c ", array[j], del);
+	}
+		printf("%i\n", array[j]);
+}
+/**
+ * binary_search - binary searching
+ * @array: the array
+ * @size: the size of the array
+ * @value: the value to find
+ * Return: the index of the number
+ */
 int binary_search(int *array, size_t size, int value)
 {
-    size_t l = 0, r = size - 1, m;
-    while (l <= r)
-    {
-        m = l + (r - l) / 2;
-        printf("Searching in array: ");
-        print_array(array, l, r);
-        if (array[m] == value)
-        {
-            return m;
-        }
-        if (array[m] < value)
-        {
-            l = m + 1;
-        }
-        else
-        {
-            r = m - 1;
-        }
-    }
-    return -1;
+	int max = (int)(size - 1), look;
+	int floor, min;
+
+	if (array == NULL)
+		return (-1);
+
+	min = 0;
+	print_array(array, max, min);
+
+	while (min < max)
+	{
+		floor = ((max + min) / 2);
+		look = array[floor];
+		if (value > look)
+		{
+			min = floor + 1;
+			print_array(array, max, min);
+		}
+		else if (value < look)
+		{
+			max = floor - 1;
+			print_array(array, max, min);
+		}
+		else
+		{
+			return (floor);
+		}
+	}
+	return (-1);
 }
