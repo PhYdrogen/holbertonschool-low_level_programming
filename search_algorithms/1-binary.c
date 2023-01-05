@@ -37,7 +37,7 @@ int binary_search(int *array, size_t size, int value)
 	min = 0;
 	print_array(array, max, min);
 
-	while (min <= max)
+	while (min < max)
 	{
 		floor = ((max + min) / 2);
 		look = array[floor];
